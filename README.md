@@ -3,13 +3,22 @@
 
 ### way 1:
 ```bash
-comming soon
+wget https://raw.githubusercontent.com/ByCh4n-Group/bych4n_rpm/main/add-remove.sh && sudo bash add-remove.sh --add
 ```
 
-###
-```bash
-comming soon
+### way 2:
+#### add the content of text in your repos.d directory named by bych4n-rpm.repo
 ```
+[bych4n-repo]
+name=bych4n-repository
+enabled=1
+baseurl=https://bych4n-group.github.io/bych4n_rpm
+type=rpm-md
+gpgcheck=1
+gpgkey=https://bych4n-group.github.io/bych4n_rpm/repodata/KEY.pub
+```
+### way 3:
+#### use your package manager arguments but if it cannot be worked then you can try way 1 and way 2
 
 # References:
 [BruteX](https://github.com/1N3/BruteX) by [xer0dayz](https://github.com/xer0dayz) no license

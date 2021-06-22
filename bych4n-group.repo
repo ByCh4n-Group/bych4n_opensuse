@@ -1,7 +1,7 @@
 [bych4n-rep]
 name=bych4n-repository
 enabled=1
-baseurl=https://bych4n-group.github.io/bych4n_rpm/x86_64
+baseurl=https://bych4n-group.github.io/bych4n_rpm
 type=NONE
 gpgcheck=1
 gpgkey=https://dl.google.com/linux/linux_signing_key.pub

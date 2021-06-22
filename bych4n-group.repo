@@ -4,4 +4,4 @@ enabled=1
 baseurl=https://bych4n-group.github.io/bych4n_rpm
 type=rpm-md
 gpgcheck=1
-gpgkey=ByCh4n-Group.github.io/bych4n_rpm/repodata/KEY.gpg
+gpgkey=ByCh4n-Group.github.io/bych4n_rpm/repodata/KEY.pub

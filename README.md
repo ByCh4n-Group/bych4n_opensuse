@@ -1,21 +1,21 @@
-# bych4n_rpm
+# bych4n_opensuse
 ## How To Add
 
 ### way 1:
 ```bash
-wget https://raw.githubusercontent.com/ByCh4n-Group/bych4n_rpm/main/add-remove.sh && sudo bash add-remove.sh --add
+wget https://raw.githubusercontent.com/ByCh4n-Group/bych4n_opensuse/main/add-remove.sh && sudo bash add-remove.sh --add
 ```
 
 ### way 2:
-#### add the content of text in your repos.d directory named by bych4n-rpm.repo
+#### add the content of text in your /etc/zypp/repos.d directory named by bych4n-rpm.repo
 ```
 [bych4n-repo]
 name=bych4n-repository
 enabled=1
-baseurl=https://bych4n-group.github.io/bych4n_rpm
+baseurl=https://bych4n-group.github.io/bych4n_opensuse
 type=rpm-md
 gpgcheck=1
-gpgkey=https://bych4n-group.github.io/bych4n_rpm/repodata/KEY.pub
+gpgkey=https://bych4n-group.github.io/bych4n_opensuse/repodata/KEY.pub
 ```
 ### way 3:
 #### use your package manager arguments but if it cannot be worked then you can try way 1 and way 2
@@ -69,4 +69,4 @@ quack by Ivan Nikolsky & Imperator Vladimir GPL3 license
 
 ## IMPORTANT EXPLANATION: The tools in this repository do not belong to the bych4n team, their maintainers(authors) and original sources are mentioned above on reference.
 
-![image](https://user-images.githubusercontent.com/54551308/122956959-24b94000-d38a-11eb-85b0-15ff6cc25a00.png)
+![image](https://user-images.githubusercontent.com/54551308/123280736-b3a49480-d511-11eb-9282-990144121d9c.png)

@@ -7,7 +7,7 @@ wget https://raw.githubusercontent.com/ByCh4n-Group/bych4n_opensuse/main/add-rem
 ```
 
 ### way 2:
-#### add the content of text in your /etc/zypp/repos.d directory named by bych4n-rpm.repo
+#### add the content of text in your /etc/zypp/repos.d directory named by bych4n-opensuse.epo
 ```
 [bych4n-repo]
 name=bych4n-repository

@@ -1,45 +1,50 @@
 #!/bin/bash
 
+#    add remove script for bych4n-opensus(e) :D. 
+#    Copyright (C) 2021  lazypwny751
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+
 [ $UID != 0 ] && { echo "please try again with root privalages 'sudo bash $(basename $0)'" ; exit 1 ; }
 
-definebase-beta() {
-    if [ -e /etc/fedora-release ] ; then
-        set_rpmbase="/etc/yum.repos.d"
-    elif [ -e /etc/zypp/zypp.conf ] ; then
-        set_rpmbase="/etc/zypp/repos.d"
-    else
-        echo "unknow rpm based distro please add or remove the metadata of repository with manually."
-        cat - <<EOF 
-[bych4n-repo]
-name=bych4n-repository
-enabled=1
-baseurl=https://bych4n-group.github.io/bych4n_rpm
-type=rpm-md
-gpgcheck=1
-gpgkey=https://bych4n-group.github.io/bych4n_rpm/repodata/KEY.pub
-EOF
+checkopensus() {
+    source /etc/os-release || source /usr/lib/os-release
+    if [[ $(echo "$NAME" | awk '{print $1}') != "openSUSE" ]] ; then
+        echo "please use this script on openSUSE based distro(s)"
         exit 1
     fi
 }
 
 case ${1} in
     [aA][dD][dD]|--[aA][dD][dD]|-[aA])
-        definebase-beta
-        cat - > ${set_rpmbase}/bych4n-rpm.repo <<EOF 
+        cat - > /etc/zypp/repos.d/bych4n-opensus.repo <<EOF 
 [bych4n-repo]
 name=bych4n-repository
 enabled=1
-baseurl=https://bych4n-group.github.io/bych4n_rpm
+baseurl=https://bych4n-group.github.io/bych4n_opensuse
 type=rpm-md
 gpgcheck=1
-gpgkey=https://bych4n-group.github.io/bych4n_rpm/repodata/KEY.pub
+gpgkey=https://bych4n-group.github.io/bych4n_opensuse/repodata/KEY.pub
 EOF
+    echo "metadata created."
     ;;
     [rR][eE][mM][oO][vV][eE]|--[rR][eE][mM][oO][vV][eE]|-[aA])
-        definebase-beta
-        [ -e ${set_rpmbase}/bych4n-rpm.repo ] && rm ${set_rpmbase}/bych4n-rpm.repo 
+        [ -e /etc/zypp/repos.d/bych4n-opensus.repo ] && rm /etc/zypp/repos.d/bych4n-opensus.repo 
     ;;
     *)
         echo "wrong usage there are two (2) flags: --add, --remove"
+        exit 1
     ;;
 esac

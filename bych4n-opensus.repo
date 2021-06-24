@@ -1,0 +1,7 @@
+[bych4n-repo]
+name=bych4n-repository
+enabled=1
+baseurl=https://bych4n-group.github.io/bych4n_opensuse
+type=rpm-md
+gpgcheck=1
+gpgkey=https://bych4n-group.github.io/bych4n_opensuse/repodata/KEY.pub

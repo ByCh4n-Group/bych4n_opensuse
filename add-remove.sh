@@ -29,6 +29,7 @@ checkopensus() {
 
 case ${1} in
     [aA][dD][dD]|--[aA][dD][dD]|-[aA])
+        rpm --import https://bych4n-group.github.io/bych4n_opensuse/repodata/KEY.pub
         cat - > /etc/zypp/repos.d/bych4n-opensus.repo <<EOF 
 [bych4n-repo]
 name=bych4n-repository

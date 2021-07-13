@@ -39,7 +39,7 @@ type=rpm-md
 gpgcheck=1
 gpgkey=https://bych4n-group.github.io/bych4n_opensuse/repodata/KEY.pub
 EOF
-    echo "metadata created."
+        echo "metadata created."
     ;;
     [rR][eE][mM][oO][vV][eE]|--[rR][eE][mM][oO][vV][eE]|-[aA])
         [ -e /etc/zypp/repos.d/bych4n-opensus.repo ] && rm /etc/zypp/repos.d/bych4n-opensus.repo 
